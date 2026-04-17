@@ -1,6 +1,6 @@
 {
-    "name": "template_flutter",
-    "short_name": "template_flutter",
+    "name": "shapes",
+    "short_name": "shapes",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

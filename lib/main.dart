@@ -1,30 +1,22 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:tots_mine/screens/intro/splash_screen.dart';
+import 'package:shapes/modules/onboarding/splash_screen.dart';
 
-void main() => runApp(
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => const MyApp(),
-      ),
-    );
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      useInheritedMediaQuery: true,
+      title: 'Shapes',
       debugShowCheckedModeBanner: false,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      title: 'Tots Mine',
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-      home: const SplashScreen(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
+      ),
+      home: SplashScreen(),
     );
   }
 }
