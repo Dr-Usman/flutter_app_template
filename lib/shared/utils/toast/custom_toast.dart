@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:toastification/toastification.dart';
 
 class CustomToast {
-  static void show({
+  static void show(
+    String? title, {
     BuildContext? context,
-    String? title,
     String? description,
     bool isSuccess = false,
   }) async {
@@ -12,8 +12,8 @@ class CustomToast {
       context: context,
       type: isSuccess ? ToastificationType.success : ToastificationType.error,
       style: ToastificationStyle.flat,
-      title: Text(title ?? ""),
-      description: Text(description ?? ""),
+      title: title != null ? SelectableText(title) : null,
+      description: description != null ? SelectableText(description) : null,
       alignment: Alignment.topRight,
       autoCloseDuration: const Duration(seconds: 4),
     );
