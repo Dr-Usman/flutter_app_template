@@ -3,7 +3,7 @@ import 'package:shapes/core/constants/app_assets.dart';
 import 'package:shapes/core/constants/app_colors.dart';
 import 'package:shapes/modules/auth/login/login_screen.dart';
 import 'package:shapes/modules/auth/signup/signup_screen.dart';
-import 'package:shapes/shared/utils/navigator_service.dart';
+import 'package:shapes/services/navigator/navigator_service.dart';
 import 'package:shapes/shared/widgets/buttons/custom_primary_button.dart';
 import 'package:shapes/shared/widgets/buttons/custom_text_button.dart';
 import 'package:shapes/shared/widgets/images/custom_svg_widget.dart';
@@ -23,6 +23,7 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Spacer(),
             // SizedBox(height: height * 0.01),
             CustomSvgWidget(
               assetPath: AppImages.athletesTraining,
@@ -60,7 +61,7 @@ class WelcomeScreen extends StatelessWidget {
                     child: CustomPrimaryButton(
                       title: 'Login',
                       onPressed: () {
-                        NavigatorService.push(context, LoginScreen());
+                        NavigatorService.push(LoginScreen());
                       },
                     ),
                   ),
@@ -71,13 +72,19 @@ class WelcomeScreen extends StatelessWidget {
                       title: 'Register',
                       fontWeight: FontWeight.bold,
                       onPressed: () {
-                        NavigatorService.push(context, SignupScreen());
+                        NavigatorService.push(SignupScreen());
                       },
                     ),
                   ),
                 ],
               ),
             ),
+            // Spacer(),
+            // Image.asset(
+            //   AppLogos.nextbridge,
+            //   width: width * 0.3,
+            //   height: height * 0.1,
+            // ),
           ],
         ),
       ),

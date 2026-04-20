@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shapes/core/constants/app_assets.dart';
 import 'package:shapes/core/constants/app_colors.dart';
+import 'package:shapes/modules/auth/reset_password/reset_password_screen.dart';
+import 'package:shapes/services/navigator/navigator_service.dart';
 import 'package:shapes/shared/widgets/buttons/custom_primary_button.dart';
 import 'package:shapes/shared/widgets/buttons/custom_text_button.dart';
 import 'package:shapes/shared/widgets/images/custom_svg_widget.dart';
@@ -42,7 +44,7 @@ class OtpScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: height * 0.01),
                   CustomSvgWidget(
-                    assetPath: AppImages.forgotPassword,
+                    assetPath: AppImages.otpVerification,
                     width: width * 0.3,
                     height: height * 0.2,
                   ),
@@ -77,7 +79,9 @@ class OtpScreen extends StatelessWidget {
 
                   CustomPrimaryButton(
                     title: 'Verify OTP',
-                    onPressed: () {},
+                    onPressed: () {
+                      NavigatorService.push(ResetPasswordScreen(email: email));
+                    },
                     // width: double.infinity,
                     // height: 50,
                   ),

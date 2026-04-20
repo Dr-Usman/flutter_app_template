@@ -1,4 +1,1 @@
-class UiUtils {
-
-  
-}
+class UiUtils {}

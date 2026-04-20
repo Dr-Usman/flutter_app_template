@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shapes/core/constants/app_assets.dart';
 import 'package:shapes/core/constants/app_colors.dart';
 import 'package:shapes/modules/auth/otp/otp_screen.dart';
-import 'package:shapes/shared/utils/navigator_service.dart';
+import 'package:shapes/services/navigator/navigator_service.dart';
 import 'package:shapes/shared/widgets/buttons/custom_primary_button.dart';
 import 'package:shapes/shared/widgets/buttons/custom_text_button.dart';
+import 'package:shapes/shared/widgets/images/custom_svg_widget.dart';
 import 'package:shapes/shared/widgets/textfields/custom_text_field.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
@@ -44,6 +46,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: height * 0.01),
 
+                  CustomSvgWidget(
+                    assetPath: AppImages.forgotPassword,
+                    width: width * 0.3,
+                    height: height * 0.2,
+                  ),
+                  SizedBox(height: height * 0.01),
+
                   Center(
                     child: Text(
                       "Forgot Password",
@@ -79,7 +88,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   CustomPrimaryButton(
                     title: 'Reset Password',
                     onPressed: () {
-                      NavigatorService.push(context, OtpScreen(email: email));
+                      NavigatorService.push(OtpScreen(email: email));
                     },
                     // width: double.infinity,
                     // height: 50,

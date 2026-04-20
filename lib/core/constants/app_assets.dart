@@ -8,6 +8,8 @@ class AppImages {
   // Images
   static const String athletesTraining = "assets/images/athletes_training.svg";
   static const String forgotPassword = "assets/images/forgot_password.svg";
+  static const String otpVerification = "assets/images/otp_verification.svg";
+  static const String resetPassword = "assets/images/reset_password.svg";
 }
 
 class AppIcons {

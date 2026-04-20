@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shapes/core/constants/app_assets.dart';
 import 'package:shapes/core/constants/app_colors.dart';
 import 'package:shapes/modules/onboarding/welcome_screen.dart';
-import 'package:shapes/shared/utils/navigator_service.dart';
+import 'package:shapes/services/navigator/navigator_service.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void _navigateToHome() async {
     await Future.delayed(const Duration(seconds: 1));
 
-    NavigatorService.pushReplacement(context, const WelcomeScreen());
+    NavigatorService.pushReplacement(const WelcomeScreen());
   }
 
   @override

@@ -3,7 +3,8 @@ import 'package:shapes/core/constants/app_assets.dart';
 import 'package:shapes/core/constants/app_colors.dart';
 import 'package:shapes/modules/auth/forgot_password/forgot_password_screen.dart';
 import 'package:shapes/modules/auth/signup/signup_screen.dart';
-import 'package:shapes/shared/utils/navigator_service.dart';
+import 'package:shapes/modules/dashboard/main_screen.dart';
+import 'package:shapes/services/navigator/navigator_service.dart';
 import 'package:shapes/shared/widgets/buttons/custom_icon_button.dart';
 import 'package:shapes/shared/widgets/buttons/custom_primary_button.dart';
 import 'package:shapes/shared/widgets/buttons/custom_text_button.dart';
@@ -82,7 +83,6 @@ class LoginScreen extends StatelessWidget {
                       fontSize: 12,
                       onPressed: () {
                         NavigatorService.push(
-                          context,
                           ForgotPasswordScreen(email: 'abc@mail.com'),
                         );
                       },
@@ -100,7 +100,9 @@ class LoginScreen extends StatelessWidget {
 
                   CustomPrimaryButton(
                     title: 'Login',
-                    onPressed: () {},
+                    onPressed: () {
+                      NavigatorService.pushAndRemoveUntil(const MainScreen());
+                    },
                     // width: double.infinity,
                     // height: 50,
                   ),
@@ -110,7 +112,7 @@ class LoginScreen extends StatelessWidget {
                     title: 'Create new account',
                     fontSize: 13,
                     onPressed: () {
-                      NavigatorService.push(context, SignupScreen());
+                      NavigatorService.push(SignupScreen());
                     },
                   ),
 
